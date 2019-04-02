@@ -6,7 +6,7 @@ Cadastro de entidades (clientes, fornecedores e funcionários) com endereço etc
 ## Instalação
 
 ```sh
-composer require intranetone-entidade
+composer require agileti/ioentidade
 ```
 ```sh
 php artisan io-entidade:install
