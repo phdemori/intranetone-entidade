@@ -14,9 +14,9 @@ class EntidadeRequest extends IORequest
         $input['cpf_cnpj'] = preg_replace('/\D/', '', $input['cpf_cnpj']);
         $input['cep'] = preg_replace('/\D/', '', $input['cep']);
 
-        if (is_array($input['tipo'])) {
+        /*if (is_array($input['tipo'])) {
             $input['tipo'] = implode(',', $input['tipo']);
-        }
+        }*/
 
         if (isset($input['dt_nascimento_submit'])) {
             $input['dt_nascimento'] = $input['dt_nascimento_submit'];

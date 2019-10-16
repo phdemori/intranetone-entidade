@@ -33,6 +33,8 @@ class CreateEntidadeTable extends Migration
             $table->string('bairro')->nullable();
             $table->integer('cidade_id')->unsigned();
             $table->foreign('cidade_id')->references('id')->on('cidades');
+            $table->integer('condominio_id')->unsigned();
+            $table->foreign('condominio_id')->references('id')->on('condominios');
             $table->blob('observacao')->nullable();
             $table->timestamps();
             $table->softDeletes();

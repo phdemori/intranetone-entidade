@@ -63,7 +63,8 @@ class EntidadeController extends IOController
 
         $_new = (object) $request->all();
         $_old = Entidade::find($id);
-        $_old->tipo = $_new->tipo;
+        //$_old->tipo = $_new->tipo;
+        $_old->condominio_id = $_new->condominio_id;
         $_old->razaosocial = $_new->razaosocial;
         $_old->nome_fantasia = $_new->nome_fantasia;
         $_old->insc_estadual = $_new->insc_estadual;

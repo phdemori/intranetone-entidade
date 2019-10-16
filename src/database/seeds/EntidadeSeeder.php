@@ -20,6 +20,14 @@ class EntidadeSeeder extends Seeder
                 'order' => Service::max('order') + 1,
             ]);
         }
+        //seta privilegios padrão para o role odin
+        $odinRole = Sentinel::findRoleBySlug('odin');
+        $odinRole->addPermission('entidade.view');
+        $odinRole->addPermission('entidade.create');
+        $odinRole->addPermission('entidade.update');
+        $odinRole->addPermission('entidade.delete');
+        $odinRole->save();
+
         //seta privilegios padrão para o role admin
         $adminRole = Sentinel::findRoleBySlug('admin');
         $adminRole->addPermission('entidade.view');
@@ -27,6 +35,9 @@ class EntidadeSeeder extends Seeder
         $adminRole->addPermission('entidade.update');
         $adminRole->addPermission('entidade.delete');
         $adminRole->save();
+
+        
+
         /*
         Cidade::query()->truncate();
         $json = File::get("public/io/services/cidades.json");

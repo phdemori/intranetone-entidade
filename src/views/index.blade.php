@@ -2,8 +2,10 @@
 
 {{-- page level styles --}}
 @section('header_styles')
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/pickadate-full.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('io/services/io-entidade.min.css') }}">
+    <script src="{{ asset('io/vendors/cidades_otimizado.js') }}" charset="ISO-8859-1" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/pickadate-full.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('io/services/io-entidade.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('io/vendors/select2/css/select2.min.css') }}"
 @stop
 
 @section('main-heading')
@@ -32,21 +34,15 @@
 	<!-- content -->
   @stop
 
-  @section('after_body_scripts')
-    @include('IntranetOne::base.social.fb-sdk',[
-        'app_id'=>config('intranetone.social_media.facebook.app_id'),
-        'app_version'=>config('intranetone.social_media.facebook.app_version'),
-        'app_locale'=>config('intranetone.social_media.facebook.locale')
-        ])
-  @endsection
+  @section('footer_scripts')
+  <script src="{{ asset('js/pickadate-full.min.js') }}" type="text/javascript"></script>
 
-@section('footer_scripts')
-<script src="{{ asset('js/pickadate-full.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('io/services/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('io/services/jQuery-Autocomplete-master/dist/jquery.autocomplete.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('io/services/cidades_otimizado.js') }}" charset="ISO-8859-1" type="text/javascript"></script>
-<script src="{{ asset('io/services/ext-jquery.mask.js') }}" type="text/javascript"></script>
-<script src="{{ asset('io/services/io-entidade-babel.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('io/services/io-entidade-mix.min.js') }}" type="text/javascript"></script>
-<script src="{{ asset('io/services/io-entidade.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('io/vendors/jquery.mask.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('io/vendors/jquery.autocomplete.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('io/vendors/select2/js/select2.min.js') }}" type="text/javascript"></script>
+
+  <script src="{{ asset('io/services/io-entidade-babel.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('io/services/io-entidade-mix.min.js') }}" type="text/javascript"></script>
+  <script src="{{ asset('io/services/io-entidade.min.js') }}" type="text/javascript"></script>
+
 @stop

@@ -13,7 +13,7 @@ class IOEntidadeServiceProvider extends ServiceProvider
     public function boot()
     {
       $this->loadViewsFrom(__DIR__.'/views', 'Entidade');
-      //$this->loadMigrationsFrom(__DIR__.'/database/migrations');
+      $this->loadMigrationsFrom(__DIR__.'/database/migrations');
     }
 
     public function register()
