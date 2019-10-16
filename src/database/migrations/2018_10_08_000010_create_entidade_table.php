@@ -8,8 +8,8 @@ class CreateEntidadeTable extends Migration
     public function up()
     {
         Schema::create('entidades', function (Blueprint $table) {
-            $table->integer('id')->primary(); 
-            $table->char('cpf_cnpj', 14); 
+            $table->integer('id')->primary();
+            $table->char('cpf_cnpj', 14);
             $table->set('tipo', ['CLI', 'FOR', 'FUN'])->default('CLI');
             $table->string('razaosocial')->nullable();
             $table->string('nome_fantasia');
@@ -33,14 +33,12 @@ class CreateEntidadeTable extends Migration
             $table->string('bairro')->nullable();
             $table->integer('cidade_id')->unsigned();
             $table->foreign('cidade_id')->references('id')->on('cidades');
-            $table->integer('condominio_id')->unsigned();
-            $table->foreign('condominio_id')->references('id')->on('condominios');
             $table->blob('observacao')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });
     }
-    
+
     /**
      * Reverse the migrations.
      *

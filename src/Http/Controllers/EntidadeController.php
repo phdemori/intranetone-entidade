@@ -22,18 +22,18 @@ class EntidadeController extends IOController
 
     function list() {
         $query = Entidade::select('*')->orderBy('created_at', 'desc')->get();
-        
+
         return Datatables::of(collect($query))->make(true);
     }
 
     public function create(EntidadeRequest $request)
     {
         $check = $this->__create($request);
-        
+
         if (!$check['status']) {
             return response()->json(['errors' => $check['errors']], $check['code']);
         }
-        
+
         $obj = new Entidade($request->all());
         $obj->save();
 
@@ -63,8 +63,7 @@ class EntidadeController extends IOController
 
         $_new = (object) $request->all();
         $_old = Entidade::find($id);
-        //$_old->tipo = $_new->tipo;
-        $_old->condominio_id = $_new->condominio_id;
+        $_old->tipo = $_new->tipo;
         $_old->razaosocial = $_new->razaosocial;
         $_old->nome_fantasia = $_new->nome_fantasia;
         $_old->insc_estadual = $_new->insc_estadual;
@@ -128,7 +127,7 @@ class EntidadeController extends IOController
     {
         return json_encode(Entidade::select('razaosocial as n', 'cpf_cnpj as k')->where('razaosocial', 'like', "%$query")->get());
     }
-
+    /*
     public function get_enum_values( $table, $field )
     {
         $type = Entidade::query( "SHOW COLUMNS FROM {$table} WHERE Field = '{$field}'" )->row( 0 )->Type;
@@ -136,4 +135,5 @@ class EntidadeController extends IOController
         $enum = explode("','", $matches[1]);
         return $enum;
     }
+    */
 }

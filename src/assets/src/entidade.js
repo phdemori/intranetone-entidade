@@ -430,12 +430,12 @@ new IOService({
                             .enableValidator('cpf_cnpj', 'vat')
                             .revalidateField('cpf_cnpj');
                     }
-                    /*
+
                     data.tipo = data.tipo.split(',');
                     for (var i = 0; i < data.tipo.length; i++) {
                       $('#tipo' + data.tipo[i]).prop('checked', true);
                     }
-                    */
+
                     if (data.dt_nascimento != null) {
                         $('#dt_nascimento_submit').val(data.dt_nascimento);
                         data.dt_nascimento = data.dt_nascimento.substr(8, 2) + '/' + data.dt_nascimento.substr(5, 2) + '/' + data.dt_nascimento.substr(0, 4);
@@ -443,7 +443,6 @@ new IOService({
                     }
                     $('#cpf_cnpj').trigger('input');
                     $("#__form_edit").val(data.id);
-                    $("#condominio_id").val(data.condominio_id);
                     $("#nome_fantasia").val(data.nome_fantasia);
                     $("#telefone1").val(data.telefone1);
                     $("#telefone2").val(data.telefone2);

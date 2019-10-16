@@ -12,7 +12,6 @@
     </div>
   </div>
   <div class="col-md-4 col-sm-12">
-    <!--
     <label for='tipo'>Tipo de cadastro</label><br>
     <div class="custom-control custom-radio custom-control-inline">
       <input type="checkbox" class="custom-control-input" onclick="return false;" checked id="tipoCLI" name="tipo[]" value="CLI">
@@ -26,16 +25,6 @@
       <input type="checkbox" class="custom-control-input" id="tipoFUN" name="tipo[]" value="FUN">
       <label class="custom-control-label" for="tipoFUN">Funcionário</label>
     </div>
-    -->
-    <div class="form-group selectContainer">
-        <label for='condominio_id'>Condomínio</label>
-        <select name="condominio_id" id="condominio_id" class="form-control input-lg">
-          @php
-            use Agileti\IOCondominio\Condominio;
-            echo Condominio::getListOption();
-          @endphp
-        </select>
-      </div>
   </div>
 </div>
 <div class = 'row pf_container'>
