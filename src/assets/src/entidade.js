@@ -2,6 +2,7 @@ new IOService({
     name: 'Entidade',
 },
     function (self) {
+        //$('.selectContainer').select2();
         $.jMaskGlobals = {
             maskElements: 'input,td,span,div',
             dataMaskAttr: '*[data-mask]',

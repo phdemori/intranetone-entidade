@@ -34,6 +34,7 @@ function IOEntidade(params={}){
 
     //copy separated for compatibility
     mix.babel(dep.entidade + 'entidade.js', IO.dest.io.root + 'services/io-entidade.min.js');
+    mix.babel(dep.entidade + 'cidades.json', IO.dest.io.root + 'vendors/cidades.json');
     mix.babel(dep.entidade + 'cidades_otimizado.js', IO.dest.io.root + 'vendors/cidades_otimizado.js');
     mix.babel(dep.entidade + 'vendors/jQuery-Autocomplete-master/dist/jquery.autocomplete.min.js', IO.dest.io.root + 'vendors/jquery.autocomplete.min.js');
     mix.babel(dep.entidade + 'vendors/jQuery-Mask-Plugin-master/dist/jquery.mask.min.js', IO.dest.io.root + 'vendors/jquery.mask.min.js');

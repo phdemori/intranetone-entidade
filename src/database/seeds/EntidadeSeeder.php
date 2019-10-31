@@ -36,11 +36,8 @@ class EntidadeSeeder extends Seeder
         $adminRole->addPermission('entidade.delete');
         $adminRole->save();
 
-        
-
-        /*
         Cidade::query()->truncate();
-        $json = File::get("public/io/services/cidades.json");
+        $json = File::get("public/io/vendors/cidades.json");
         $data = json_decode($json, true);
         $i = 0;
         foreach ($data as $obj) {
@@ -52,6 +49,5 @@ class EntidadeSeeder extends Seeder
                 )
             );
         }
-        */
     }
 }
